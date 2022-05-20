@@ -59,7 +59,7 @@ public class AppTest
         //when
         boolean res = App.pwdValidNoRegExp(pwd);
         //then
-    assertFalse(res);
+        assertFalse(res);
 }
 
 @Test
