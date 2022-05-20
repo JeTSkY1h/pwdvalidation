@@ -10,10 +10,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println( "Time is what determines security. With enough time nothing is unhackable." );
     }
 
-    
     public static boolean pwdValid(String pwd) {
         String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$";
         Pattern pattern = Pattern.compile(regex);
