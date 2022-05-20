@@ -10,7 +10,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Time is what determines security. With enough time nothing is unhackable." );
+        System.out.println( "Time is what determines security. With enough time nothing is unhackable. .:. .:." );
     }
 
     public static boolean pwdValid(String pwd) {

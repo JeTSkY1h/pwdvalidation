@@ -161,6 +161,16 @@ public class pwdValidationNoRegExpTest {
     }
 
     @Test
+    void NotLongEnough(){
+        //given
+        String pwd = "Zuk!ur5";
+        //then
+        String res = pwdValidationNoRegExp.pwdValidNoRegExp(pwd);
+        //when
+        assertEquals("Passwörter müssen mindestens 8 Zeichen lang sein.", res);
+    }
+
+    @Test
     void ArrayTest(){
         //given
         String[] pwds = {"ichbinsowasvonnichtsicher!5","IchBin5owasVonSicher","TEST","IchBin5owasVonSicher!"};
