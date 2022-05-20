@@ -71,7 +71,7 @@ public class pwdValidationNoRegExpTest {
     @Test
     void shouldBeFalseCauseNoNumber(){
         //given
-        String pwd = "ICHBINLANGGENUGABERDASISTEGAL";
+        String pwd = "ICHBINLANGGENUgABERDASISTEGAL";
         //then 
         boolean res = pwdValidationNoRegExp.pwdValidationDigit(pwd);
         //when
@@ -160,7 +160,19 @@ public class pwdValidationNoRegExpTest {
         assertEquals("Passwörter müssen einen kleingeschriebenen Buchstaben enthalten.", res);
     }
 
-
+    @Test
+    void ArrayTest(){
+        //given
+        String[] pwds = {"ichbinsowasvonnichtsicher!5","IchBin5owasVonSicher","TEST","IchBin5owasVonSicher!"};
+        String[] expectedRes = {"Passwort: ichbinsowasvonnichtsicher!5 // NOT SAFE! Info: Passwörter müssen einen Großgeschriebenen Buchstaben enthalten.",
+            "Passwort: IchBin5owasVonSicher // NOT SAFE! Info: Passwörter müssen ein Sonderzeichen enthalten.",
+            "Passwort: TEST // NOT SAFE! Info: Passwörter müssen einen kleingeschriebenen Buchstaben enthalten.",
+            "Passwort: IchBin5owasVonSicher! // SAFE!"};
+        //then
+        String[] resArr = pwdValidationNoRegExp.pwdArrayValidation(pwds);
+        //when
+        assertArrayEquals(expectedRes, resArr);
+    }
     
 
 

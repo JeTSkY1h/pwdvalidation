@@ -15,7 +15,6 @@ public class pwdValidationNoRegExp {
     public static boolean pwdValidationSpecialKey(String pwd) {
         char[] array = pwd.toCharArray();
         for(char c: array){
-            System.out.println(Character.isAlphabetic(c));
             if(!Character.isAlphabetic(c) && !Character.isDigit(c)){
                 return true;
             }
@@ -72,7 +71,21 @@ public class pwdValidationNoRegExp {
         }
         
         return "Okay";
-        
-        
+      
+    }
+
+    public static String[] pwdArrayValidation(String[] pwds) {
+        String[] resArr = new String[pwds.length];
+        for(int i=0; i< pwds.length; i++) {
+            String pwd = pwds[i];
+            String res = pwdValidNoRegExp(pwd);
+            if(!res.equals("Okay")){
+                resArr[i] = "Passwort: " + pwd + " // NOT SAFE! Info: " + res; 
+            } else {
+                resArr[i] = "Passwort: " + pwd + " // SAFE!"; 
+            }
+                System.out.println(resArr[i]);
+        }
+        return resArr;
     }
 }
