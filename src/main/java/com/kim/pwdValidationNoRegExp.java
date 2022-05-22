@@ -27,9 +27,8 @@ public class pwdValidationNoRegExp {
     }
 
     public static boolean pwdValidationSpecialKey(String pwd) {
-        char[] array = pwd.toCharArray();
-        for(char c: array){
-            if(!Character.isAlphabetic(c) && !Character.isDigit(c)){
+        for(int i=0; i<pwd.length();i++){
+            if(!Character.isLetterOrDigit(pwd.charAt(i))){
                 return true;
             }
         }
@@ -37,9 +36,8 @@ public class pwdValidationNoRegExp {
     }
 
     public static boolean pwdValidationDigit (String pwd) {
-        char[] array = pwd.toCharArray();
-        for(char c: array){
-            if (Character.isDigit(c)){
+        for(int i=0; i<pwd.length();i++){
+            if (Character.isDigit(pwd.charAt(i))){
                 return true;
             }
         }
@@ -47,9 +45,8 @@ public class pwdValidationNoRegExp {
     }
 
     public static boolean pwdValidationLowerCase (String pwd) {
-        char[] array = pwd.toCharArray();
-        for(char c: array){
-            if (Character.isLowerCase(c)){
+        for(int i=0; i<pwd.length();i++){
+            if (Character.isLowerCase(pwd.charAt(i))){
                 return true;
             }
         }
@@ -57,9 +54,8 @@ public class pwdValidationNoRegExp {
     }
 
     public static boolean pwdValidationUpperCase (String pwd) {
-        char[] array = pwd.toCharArray();
-        for(char c: array){
-            if (Character.isUpperCase(c)){
+        for(int i=0; i<pwd.length();i++){
+            if (Character.isUpperCase(pwd.charAt(i))){
                 return true;
             }
         }
