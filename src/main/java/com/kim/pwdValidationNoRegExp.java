@@ -22,11 +22,11 @@ public class pwdValidationNoRegExp {
         keyboard.close();
     }
 
-    public static boolean pwdValidationLength(String pwd) {
+    private static boolean pwdValidationLength(String pwd) {
         return pwd.length() >= 8;
     }
 
-    public static boolean pwdValidationSpecialKey(String pwd) {
+    private static boolean pwdValidationSpecialKey(String pwd) {
         for(int i=0; i<pwd.length();i++){
             if(!Character.isLetterOrDigit(pwd.charAt(i))){
                 return true;
@@ -35,7 +35,7 @@ public class pwdValidationNoRegExp {
         return false;
     }
 
-    public static boolean pwdValidationDigit (String pwd) {
+    private static boolean pwdValidationDigit (String pwd) {
         for(int i=0; i<pwd.length();i++){
             if (Character.isDigit(pwd.charAt(i))){
                 return true;
@@ -44,7 +44,7 @@ public class pwdValidationNoRegExp {
         return false;
     }
 
-    public static boolean pwdValidationLowerCase (String pwd) {
+    private static boolean pwdValidationLowerCase (String pwd) {
         for(int i=0; i<pwd.length();i++){
             if (Character.isLowerCase(pwd.charAt(i))){
                 return true;
@@ -53,7 +53,7 @@ public class pwdValidationNoRegExp {
         return false;
     }
 
-    public static boolean pwdValidationUpperCase (String pwd) {
+    private static boolean pwdValidationUpperCase (String pwd) {
         for(int i=0; i<pwd.length();i++){
             if (Character.isUpperCase(pwd.charAt(i))){
                 return true;
