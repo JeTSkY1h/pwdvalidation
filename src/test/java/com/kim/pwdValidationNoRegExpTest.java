@@ -173,10 +173,10 @@ public class pwdValidationNoRegExpTest {
     @Test
     void ArrayTest(){
         //given
-        String[] pwds = {"ichbinsowasvonnichtsicher!5","IchBin5owasVonSicher","TEST","IchBin5owasVonSicher!"};
+        String[] pwds = {"ichbinsowasvonnichtsicher!5","IchBin5owasVonSicher","TESTITEST","IchBin5owasVonSicher!"};
         String[] expectedRes = {"Passwort: ichbinsowasvonnichtsicher!5 // NOT SAFE! Info: Passwörter müssen einen Großgeschriebenen Buchstaben enthalten.",
             "Passwort: IchBin5owasVonSicher // NOT SAFE! Info: Passwörter müssen ein Sonderzeichen enthalten.",
-            "Passwort: TEST // NOT SAFE! Info: Passwörter müssen einen kleingeschriebenen Buchstaben enthalten.",
+            "Passwort: TESTITEST // NOT SAFE! Info: Passwörter müssen einen kleingeschriebenen Buchstaben enthalten.",
             "Passwort: IchBin5owasVonSicher! // SAFE!"};
         //then
         String[] resArr = pwdValidationNoRegExp.pwdArrayValidation(pwds);
