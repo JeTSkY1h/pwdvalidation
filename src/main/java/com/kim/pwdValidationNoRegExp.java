@@ -1,5 +1,7 @@
 package com.kim;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class pwdValidationNoRegExp {
@@ -85,17 +87,19 @@ public class pwdValidationNoRegExp {
     }
 
     public static String[] pwdArrayValidation(String[] pwds) {
-        String[] resArr = new String[pwds.length];
-        for(int i=0; i< pwds.length; i++) {
-            String pwd = pwds[i];
-            String res = pwdValidNoRegExp(pwd);
-            if(!res.equals("Okay")){
-                resArr[i] = "Passwort: " + pwd + " // NOT SAFE! Info: " + res; 
-            } else {
-                resArr[i] = "Passwort: " + pwd + " // SAFE!"; 
-            }
-                System.out.println(resArr[i]);
-        }
-        return resArr;
+        
+        List<String> res = Arrays.asList(pwds)
+            .stream()
+            .map(pwd -> {
+                String result = pwdValidNoRegExp(pwd);
+                return result.equals("Okay") ?
+                     "Passwort: " + pwd + " // SAFE!" : 
+                     "Passwort: " + pwd + " // NOT SAFE! Info: " + result;
+            })
+            .toList();
+
+
+        String[] resArr = new String[res.size()];
+        return res.toArray(resArr);
     }
 }
